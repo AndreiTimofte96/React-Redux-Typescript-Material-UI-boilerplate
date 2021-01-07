@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Box, CircularProgress } from "@material-ui/core";
 import { getBaseApi } from "../../services/config";
 import { Header } from "../../components";
-import { IAppState } from "../../store/reducers";
+import { IAppState } from "../../store/types";
 import { getServerData, incrementCount, decrementCount, resetCount } from "./actions"
 import style from "./mainPage.scss";
 

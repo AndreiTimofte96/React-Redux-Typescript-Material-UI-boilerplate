@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 import { fetchData } from "../services";
-import { IAppState } from '../../../store/reducers';
+import { IAppState } from '../../../store/types';
 import * as types from "./types";
 
 

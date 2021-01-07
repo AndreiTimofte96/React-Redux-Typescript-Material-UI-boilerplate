@@ -1,9 +1,6 @@
 import { combineReducers, Reducer } from "redux"
-import mainPageReducer, { IMainPageState } from "../modules/mainPage/reducer";
-
-export interface IAppState {
-  mainPage: IMainPageState;
-};
+import mainPageReducer from "../modules/mainPage/reducer";
+import { IAppState } from "./types";
 
 const rootReducer = combineReducers<IAppState>({
   mainPage: mainPageReducer,

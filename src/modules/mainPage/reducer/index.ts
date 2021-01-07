@@ -1,4 +1,3 @@
-
 import { Reducer } from "redux";
 import {
   FETCH_COUNTER,
@@ -8,11 +7,8 @@ import {
   RESET,
   DispatchPayload,
 } from "../actions/types";
+import { IMainPageState } from "./types";
 
-export interface IMainPageState {
-  counter: number,
-  loading?: boolean
-};
 
 const initialState: IMainPageState = {
   counter: 0,
