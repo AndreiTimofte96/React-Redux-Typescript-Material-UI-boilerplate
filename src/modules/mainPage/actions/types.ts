@@ -1,30 +1,34 @@
-export const FETCH_COUNTER = "FETCH_COUNTER";
-export const LOADING_DATA = "LOADING_DATA";
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
-export const RESET = "RESET";
-
+export const FETCH_COUNTER = 'FETCH_COUNTER';
+export const LOADING_DATA = 'LOADING_DATA';
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+export const RESET = 'RESET';
 
 export interface IFetchCounter {
-  type: typeof FETCH_COUNTER,
-  payload: number,
+  type: typeof FETCH_COUNTER;
+  payload: number;
 }
 
 export interface ILoadingData {
-  type: typeof LOADING_DATA,
-  payload: boolean,
+  type: typeof LOADING_DATA;
+  payload: boolean;
 }
 
 export interface IIncrement {
-  type: typeof INCREMENT,
-};
+  type: typeof INCREMENT;
+}
 
 export interface IDecrement {
-  type: typeof DECREMENT,
-};
+  type: typeof DECREMENT;
+}
 
 export interface IReset {
-  type: typeof RESET,
-};
+  type: typeof RESET;
+}
 
-export type DispatchPayload = IFetchCounter | ILoadingData | IIncrement | IDecrement | IReset;
+export type DispatchPayload =
+  | IFetchCounter
+  | ILoadingData
+  | IIncrement
+  | IDecrement
+  | IReset;

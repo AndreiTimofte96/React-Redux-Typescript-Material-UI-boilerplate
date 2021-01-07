@@ -1,4 +1,4 @@
 export interface IMainPageState {
-  counter: number,
-  loading?: boolean
-};
+  counter: number;
+  loading?: boolean;
+}

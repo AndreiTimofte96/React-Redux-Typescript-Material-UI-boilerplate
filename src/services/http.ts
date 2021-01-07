@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const GET = (url: string, headers = {}) => {
-  headers["Authorization"] = "";
+  headers['Authorization'] = '';
   return axios(url, {
     headers,
   });

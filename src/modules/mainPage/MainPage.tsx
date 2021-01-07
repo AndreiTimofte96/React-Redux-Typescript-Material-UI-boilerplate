@@ -1,28 +1,34 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Button, Box, CircularProgress } from "@material-ui/core";
-import { getBaseApi } from "../../services/config";
-import { Header } from "../../components";
-import { IAppState } from "../../store/types";
-import { getServerData, incrementCount, decrementCount, resetCount } from "./actions"
-import style from "./mainPage.scss";
-
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button, Box, CircularProgress } from '@material-ui/core';
+import { getBaseApi } from '../../services/config';
+import { Header } from '../../components';
+import { IAppState } from '../../store/types';
+import {
+  getServerData,
+  incrementCount,
+  decrementCount,
+  resetCount,
+} from './actions';
+import style from './mainPage.scss';
 
 const MainPage = () => {
   const dispatch = useDispatch();
-  const { counter, loading } = useSelector((state: IAppState) => state.mainPage);
+  const { counter, loading } = useSelector(
+    (state: IAppState) => state.mainPage
+  );
 
   useEffect(() => {
     dispatch(getServerData());
-  }, [])
+  }, []);
 
   return (
     <div className="wrapper">
       <Header api={getBaseApi()} />
       <div className={style.content}>
-        {loading ?
+        {loading ? (
           <CircularProgress size={100} color="primary" />
-          :
+        ) : (
           <>
             <p> Counter: {counter} </p>
             <Box m={2}>
@@ -41,7 +47,7 @@ const MainPage = () => {
                 onClick={() => dispatch(decrementCount())}
               >
                 Decrement -1
-                </Button>
+              </Button>
             </Box>
             <Box m={2}>
               <Button
@@ -50,12 +56,12 @@ const MainPage = () => {
                 onClick={() => dispatch(resetCount())}
               >
                 Reset 0
-            </Button>
+              </Button>
             </Box>
           </>
-        }
+        )}
       </div>
-    </div >
+    </div>
   );
 };
 

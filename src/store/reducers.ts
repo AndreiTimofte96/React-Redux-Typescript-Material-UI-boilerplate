@@ -1,6 +1,6 @@
-import { combineReducers, Reducer } from "redux"
-import mainPageReducer from "../modules/mainPage/reducer";
-import { IAppState } from "./types";
+import { combineReducers, Reducer } from 'redux';
+import mainPageReducer from '../modules/mainPage/reducer';
+import { IAppState } from './types';
 
 const rootReducer = combineReducers<IAppState>({
   mainPage: mainPageReducer,

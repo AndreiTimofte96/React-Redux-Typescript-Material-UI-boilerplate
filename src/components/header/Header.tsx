@@ -1,11 +1,15 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
-import cls from "classnames";
-import { createConnection, HubConnectionState, IHubConnection } from "./services";
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import cls from 'classnames';
+import {
+  createConnection,
+  HubConnectionState,
+  IHubConnection,
+} from './services';
 
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField } from '@material-ui/core';
 
-import style from "./header.scss";
-import { GET } from "../../services/http";
+import style from './header.scss';
+import { GET } from '../../services/http';
 
 interface IHeaderProps {
   api: string;
@@ -17,10 +21,7 @@ interface IConnectionInfo {
 }
 
 const Header: FunctionComponent<IHeaderProps> = (props) => {
-  const {
-    api,
-    onData = () => { },
-  } = props;
+  const { api, onData = () => {} } = props;
 
   let con: IHubConnection | undefined;
 
@@ -28,11 +29,12 @@ const Header: FunctionComponent<IHeaderProps> = (props) => {
     state: HubConnectionState.Disconnected,
   });
 
-  const [hub, setHub] = useState("");
+  const [hub, setHub] = useState('');
 
   useEffect(() => {
     con = createConnection(api, {
-      onClose: () => setConnectionInfo({ state: HubConnectionState.Disconnected }),
+      onClose: () =>
+        setConnectionInfo({ state: HubConnectionState.Disconnected }),
       onData,
     });
   });
@@ -45,56 +47,54 @@ const Header: FunctionComponent<IHeaderProps> = (props) => {
       }
       await con.connect(hub);
     } catch (error) {
-      alert("Something wrong happened, please check the console");
+      alert('Something wrong happened, please check the console');
       console.error(error);
     }
   };
 
   const onPingClick = () => {
     GET(api)
-      .then(data => alert(data))
-      .catch(err => console.error(err));
+      .then((data) => alert(data))
+      .catch((err) => console.error(err));
   };
 
-  return (<div className={style["wrapper"]}>
-    <div className={style["brand"]}>
-      <h1>SignalR Web</h1>
-    </div>
-    <div className={style["connection"]}>
-      <div className={style["left-section"]}>
-        <Button
-          onClick={onPingClick}
-          color="primary"
-          variant="outlined"
-        >
-          PING
-        </Button>
+  return (
+    <div className={style['wrapper']}>
+      <div className={style['brand']}>
+        <h1>SignalR Web</h1>
       </div>
-      <div className={style["right-section"]}>
-        <div className={style["input-wrapper"]} >
-          <TextField
-            value={hub}
-            label="Chat Hub"
-            onChange={(ev) => setHub(ev.target.value)}
-            disabled={state === HubConnectionState.Connected}
-            variant="standard"
-            name="chat-hub"
-            type="text"
-          />
+      <div className={style['connection']}>
+        <div className={style['left-section']}>
+          <Button onClick={onPingClick} color="primary" variant="outlined">
+            PING
+          </Button>
         </div>
-        <Button
-          onClick={onButtonClick}
-          className={cls(style["button"], {
-            active: state === HubConnectionState.Connected,
-          })}
-          color="primary"
-          variant="outlined"
-        >
-          {state === HubConnectionState.Connected ? "Stop" : "Connect"}
-        </Button>
+        <div className={style['right-section']}>
+          <div className={style['input-wrapper']}>
+            <TextField
+              value={hub}
+              label="Chat Hub"
+              onChange={(ev) => setHub(ev.target.value)}
+              disabled={state === HubConnectionState.Connected}
+              variant="standard"
+              name="chat-hub"
+              type="text"
+            />
+          </div>
+          <Button
+            onClick={onButtonClick}
+            className={cls(style['button'], {
+              active: state === HubConnectionState.Connected,
+            })}
+            color="primary"
+            variant="outlined"
+          >
+            {state === HubConnectionState.Connected ? 'Stop' : 'Connect'}
+          </Button>
+        </div>
       </div>
     </div>
-  </div>);
+  );
 };
 
 export default Header;

@@ -11,6 +11,7 @@
     "classnames": "^2.2.6",
     "express": "^4.17.1",
     "http2": "^3.3.7",
+    "prettier": "^2.2.1",
     "react-google-maps": "^9.4.5",
     "react-intl": "^4.6.9",
     "redux-devtools": "^3.5.0",
@@ -70,6 +71,7 @@
     "clear:cache": "node_modules/.bin/rimraf .cache",
     "lint": "tslint --project .",
     "tsc:check": "tsc --noEmit --skipLibCheck",
+    "prettier": "prettier --write src/**/*.ts*",
     "serve": "node server.js"
   },
   "author": "",

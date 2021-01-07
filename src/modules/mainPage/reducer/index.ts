@@ -1,4 +1,4 @@
-import { Reducer } from "redux";
+import { Reducer } from 'redux';
 import {
   FETCH_COUNTER,
   LOADING_DATA,
@@ -6,16 +6,18 @@ import {
   DECREMENT,
   RESET,
   DispatchPayload,
-} from "../actions/types";
-import { IMainPageState } from "./types";
-
+} from '../actions/types';
+import { IMainPageState } from './types';
 
 const initialState: IMainPageState = {
   counter: 0,
   loading: false,
 };
 
-const mainPageReducer: Reducer<IMainPageState, DispatchPayload> = (state = initialState, action) => {
+const mainPageReducer: Reducer<IMainPageState, DispatchPayload> = (
+  state = initialState,
+  action
+) => {
   switch (action.type) {
     case FETCH_COUNTER: {
       return {
