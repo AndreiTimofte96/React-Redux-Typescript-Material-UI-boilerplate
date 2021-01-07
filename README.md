@@ -8,11 +8,35 @@
 
 ### Prerequisites
 
-If you're using _Visual Studio Code_, please do:
+If you're using *Visual Studio Code*, please do:
 
-For _Windows_ users:
 
-- Create a new file or paste the below json object to _C:\Users\{username}\AppData\Roaming\Code\User\settings.json_  
-   `{ "editor.minimap.scale": 3, "editor.tabSize": 2, "editor.formatOnSave": true, "editor.formatOnPaste": true, "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe", "workbench.editor.highlightModifiedTabs": true, "workbench.iconTheme": "material-icon-theme", "workbench.settings.editor": "json", "explorer.sortOrder": "type", "files.trimFinalNewlines": true, "javascript.updateImportsOnFileMove.enabled": "always", "typescript.updateImportsOnFileMove.enabled": "always", "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }, "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }, "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }, "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" } } `
+- Create a new file or paste the below json object to: 
+   - C:\Users\{username}\AppData\Roaming\Code\User\settings.json (**Windows**)
+   - ~/.config/Code/User/settings.json (**Linux**)
+ 
+  ```
+  {
+     "editor.tabSize": 2,
+     "editor.formatOnSave": true,
+     "editor.formatOnPaste": true,
+     "workbench.settings.editor": "json",
+     "files.trimFinalNewlines": true,
+     "javascript.updateImportsOnFileMove.enabled": "always",
+     "typescript.updateImportsOnFileMove.enabled": "always",
+     "[jsonc]": {
+       "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "[typescript]": {
+       "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "[json]": {
+       "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "[typescriptreact]": {
+       "editor.defaultFormatter": "esbenp.prettier-vscode"
+     }
+   }
+  ```
 
-- Install Visual Studio Code _Prettier_ extension
+- Install Visual Studio Code **Prettier** extension
