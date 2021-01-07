@@ -10,8 +10,8 @@ export {
 };
 
 export const createConnection = (apiUrl, {
-  onClose = () => {},
-  onData = (data: string) => {},
+  onClose = () => { },
+  onData = (data: string) => { },
 } = {}) => {
   let con: HubConnection | null = null;
 
@@ -31,5 +31,5 @@ export const createConnection = (apiUrl, {
 
       con = null;
     },
-  }  as IHubConnection;
+  } as IHubConnection;
 };

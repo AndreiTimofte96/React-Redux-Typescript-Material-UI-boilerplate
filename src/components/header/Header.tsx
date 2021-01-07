@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import cls from "classnames";
-import { createConnection, HubConnectionState, IHubConnection } from "../../services/signalRConnection";
+import { createConnection, HubConnectionState, IHubConnection } from "./services";
 
 import { Button, TextField } from "@material-ui/core";
 
@@ -19,16 +19,16 @@ interface IConnectionInfo {
 const Header: FunctionComponent<IHeaderProps> = (props) => {
   const {
     api,
-    onData = () => {},
+    onData = () => { },
   } = props;
 
   let con: IHubConnection | undefined;
 
-  const [ { state }, setConnectionInfo ] = useState<Partial<IConnectionInfo>>({
+  const [{ state }, setConnectionInfo] = useState<Partial<IConnectionInfo>>({
     state: HubConnectionState.Disconnected,
   });
 
-  const [ hub, setHub ] = useState("");
+  const [hub, setHub] = useState("");
 
   useEffect(() => {
     con = createConnection(api, {

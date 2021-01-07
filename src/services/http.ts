@@ -1,8 +1,8 @@
-
+import axios from "axios";
 
 export const GET = (url: string, headers = {}) => {
   headers["Authorization"] = "";
-  return fetch(url, {
+  return axios(url, {
     headers,
   });
 };
