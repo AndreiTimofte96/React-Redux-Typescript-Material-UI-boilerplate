@@ -1,4 +1,4 @@
-#1 SignalR WebPage
+#1 React Redux Typescript Material-UI boilerplate
 
 # Local Development Setup
   - Clone the repo
