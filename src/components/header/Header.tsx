@@ -1,10 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import cls from 'classnames';
-import {
-  createConnection,
-  HubConnectionState,
-  IHubConnection,
-} from './services';
+import { createConnection, HubConnectionState } from './services/headerServices';
+import { IHubConnection } from './services/types';
 
 import { Button, TextField } from '@material-ui/core';
 
@@ -33,8 +30,7 @@ const Header: FunctionComponent<IHeaderProps> = (props) => {
 
   useEffect(() => {
     con = createConnection(api, {
-      onClose: () =>
-        setConnectionInfo({ state: HubConnectionState.Disconnected }),
+      onClose: () => setConnectionInfo({ state: HubConnectionState.Disconnected }),
       onData,
     });
   });

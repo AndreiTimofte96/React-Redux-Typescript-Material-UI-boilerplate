@@ -4,19 +4,12 @@ import { Button, Box, CircularProgress } from '@material-ui/core';
 import { getBaseApi } from '../../services/config';
 import { Header } from '../../components';
 import { IAppState } from '../../store/types';
-import {
-  getServerData,
-  incrementCount,
-  decrementCount,
-  resetCount,
-} from './actions';
+import { getServerData, incrementCount, decrementCount, resetCount } from './actions/mainPageActions';
 import style from './mainPage.scss';
 
 const MainPage = () => {
   const dispatch = useDispatch();
-  const { counter, loading } = useSelector(
-    (state: IAppState) => state.mainPage
-  );
+  const { counter, loading } = useSelector((state: IAppState) => state.mainPage);
 
   useEffect(() => {
     dispatch(getServerData());
@@ -32,29 +25,17 @@ const MainPage = () => {
           <>
             <p> Counter: {counter} </p>
             <Box m={2}>
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={() => dispatch(incrementCount())}
-              >
+              <Button color="primary" variant="contained" onClick={() => dispatch(incrementCount())}>
                 Increment +1
               </Button>
             </Box>
             <Box m={2}>
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={() => dispatch(decrementCount())}
-              >
+              <Button color="primary" variant="contained" onClick={() => dispatch(decrementCount())}>
                 Decrement -1
               </Button>
             </Box>
             <Box m={2}>
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={() => dispatch(resetCount())}
-              >
+              <Button color="primary" variant="contained" onClick={() => dispatch(resetCount())}>
                 Reset 0
               </Button>
             </Box>

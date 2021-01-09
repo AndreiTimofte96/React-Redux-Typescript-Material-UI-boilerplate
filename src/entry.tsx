@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
 import AppRoute from './routes';
-import store from './store';
+import store from './store/store';
 
 import './assets/css/main.css';
 

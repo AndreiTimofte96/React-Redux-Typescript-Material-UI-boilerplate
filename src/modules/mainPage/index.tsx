@@ -1,1 +1,1 @@
-export { default } from './MainPage';
+export { default as MainPage } from './MainPage';

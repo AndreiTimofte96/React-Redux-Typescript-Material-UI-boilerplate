@@ -26,9 +26,4 @@ export interface IReset {
   type: typeof RESET;
 }
 
-export type DispatchPayload =
-  | IFetchCounter
-  | ILoadingData
-  | IIncrement
-  | IDecrement
-  | IReset;
+export type DispatchPayload = IFetchCounter | ILoadingData | IIncrement | IDecrement | IReset;
