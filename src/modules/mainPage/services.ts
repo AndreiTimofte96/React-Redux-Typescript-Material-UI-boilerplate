@@ -1,4 +1,4 @@
-import { GET } from '../../../services/http';
+import { GET } from '../../services/http';
 
 export const fetchData = () => {
   const API_URL = 'https://api.github.com/repos/zeit/next.js';

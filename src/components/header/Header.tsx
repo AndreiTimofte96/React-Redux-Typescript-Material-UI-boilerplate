@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import cls from 'classnames';
-import { createConnection, HubConnectionState } from './services/headerServices';
-import { IHubConnection } from './services/types';
+import { createConnection, HubConnectionState } from './services';
+import { IHubConnection } from './types';
 
 import { Button, TextField } from '@material-ui/core';
 
-import style from './header.scss';
+import styles from './styles.scss';
 import { GET } from '../../services/http';
 
 interface IHeaderProps {
@@ -55,18 +55,18 @@ const Header: FunctionComponent<IHeaderProps> = (props) => {
   };
 
   return (
-    <div className={style['wrapper']}>
-      <div className={style['brand']}>
+    <div className={styles['wrapper']}>
+      <div className={styles['brand']}>
         <h1>SignalR Web</h1>
       </div>
-      <div className={style['connection']}>
-        <div className={style['left-section']}>
+      <div className={styles['connection']}>
+        <div className={styles['left-section']}>
           <Button onClick={onPingClick} color="primary" variant="outlined">
             PING
           </Button>
         </div>
-        <div className={style['right-section']}>
-          <div className={style['input-wrapper']}>
+        <div className={styles['right-section']}>
+          <div className={styles['input-wrapper']}>
             <TextField
               value={hub}
               label="Chat Hub"
@@ -79,7 +79,7 @@ const Header: FunctionComponent<IHeaderProps> = (props) => {
           </div>
           <Button
             onClick={onButtonClick}
-            className={cls(style['button'], {
+            className={cls(styles['button'], {
               active: state === HubConnectionState.Connected,
             })}
             color="primary"

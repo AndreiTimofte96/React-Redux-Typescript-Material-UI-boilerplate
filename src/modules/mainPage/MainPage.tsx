@@ -4,8 +4,8 @@ import { Button, Box, CircularProgress } from '@material-ui/core';
 import { getBaseApi } from '../../services/config';
 import { Header } from '../../components';
 import { IAppState } from '../../store/types';
-import { getServerData, incrementCount, decrementCount, resetCount } from './actions/mainPageActions';
-import style from './mainPage.scss';
+import { getServerData, incrementCount, decrementCount, resetCount } from './actions';
+import styles from './styles.scss';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const MainPage = () => {
   return (
     <div className="wrapper">
       <Header api={getBaseApi()} />
-      <div className={style.content}>
+      <div className={styles.content}>
         {loading ? (
           <CircularProgress size={100} color="primary" />
         ) : (

@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
-import { fetchData } from '../services/mainPageServices';
-import { IAppState } from '../../../store/types';
+import { fetchData } from './services';
+import { IAppState } from '../../store/types';
 import * as types from './types';
 
 export const getServerData = () => async (dispatch: Dispatch, getState: () => IAppState) => {

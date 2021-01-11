@@ -1,3 +1,6 @@
+/*
+  ACTIONS types
+*/
 export const FETCH_COUNTER = 'FETCH_COUNTER';
 export const LOADING_DATA = 'LOADING_DATA';
 export const INCREMENT = 'INCREMENT';
@@ -27,3 +30,11 @@ export interface IReset {
 }
 
 export type DispatchPayload = IFetchCounter | ILoadingData | IIncrement | IDecrement | IReset;
+
+/*
+  REDUCER types
+*/
+export interface IMainPageState {
+  counter: number;
+  loading?: boolean;
+}

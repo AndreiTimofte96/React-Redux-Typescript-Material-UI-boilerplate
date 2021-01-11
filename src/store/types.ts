@@ -1,4 +1,4 @@
-import { IMainPageState } from '../modules/mainPage/reducer/types';
+import { IMainPageState } from '../modules/mainPage/types';
 
 export interface IAppState {
   mainPage: IMainPageState;

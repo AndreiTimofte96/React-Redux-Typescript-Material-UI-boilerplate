@@ -1,6 +1,13 @@
 import { Reducer } from 'redux';
-import { FETCH_COUNTER, LOADING_DATA, INCREMENT, DECREMENT, RESET, DispatchPayload } from '../actions/types';
-import { IMainPageState } from './types';
+import {
+  FETCH_COUNTER,
+  LOADING_DATA,
+  INCREMENT,
+  DECREMENT,
+  RESET,
+  DispatchPayload,
+  IMainPageState,
+} from './types';
 
 const initialState: IMainPageState = {
   counter: 0,
